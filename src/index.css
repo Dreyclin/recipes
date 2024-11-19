@@ -16,7 +16,7 @@ body {
 }
 
 .chosen_link {
-    @apply text-[#0c2e1d] font-bold pb-1 border-b-2 border-[#0c2e1d]
+    @apply text-[#0c2e1d] font-bold border-b-2 border-[#0c2e1d]
 }
 
 .item {

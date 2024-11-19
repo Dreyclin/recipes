@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 interface ItemProps {
   id: number,
@@ -7,7 +8,7 @@ interface ItemProps {
   description: string
 }
 
-const Item: React.FC<ItemProps> = ({meal, image, description}) => {
+const Item: React.FC<ItemProps> = ({id, meal, image, description}) => {
   return (
     <div className='item'>
       <div className="recipe_image_container">
@@ -19,7 +20,7 @@ const Item: React.FC<ItemProps> = ({meal, image, description}) => {
       </div>
       <div className="recipe_btns_container last_item">
         <button className='recipe_btn' onClick={() => {}}>Обрати</button>
-        <button className='recipe_btn' onCanPlay={() => {}}>Детальніше</button>
+        <Link to={`/details/${id}`} className='recipe_btn'>Детальніше</Link>
       </div>
     </div>
   )

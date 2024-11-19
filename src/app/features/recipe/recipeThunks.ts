@@ -7,7 +7,6 @@ export const getMeal = createAsyncThunk(
         try {
             const response = await fetch("https://www.themealdb.com/api/json/v1/1/random.php")
             const data = await response.json();
-            console.log(data.meals[0].idMeal);
             const mealId = data.meals[0].idMeal;
             const mealName = data.meals[0].strMeal;
             const mealCategory = data.meals[0].strCategory;

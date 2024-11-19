@@ -28,7 +28,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, pagina
       >
         &lt;
       </button>
-      <div className="flex gap-4">
+      <div className="sm:flex hidden gap-4">
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index + 1}

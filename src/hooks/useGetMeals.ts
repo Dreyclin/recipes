@@ -9,24 +9,25 @@ const useGetMeals = () => {
     const [error, setError] = useState<string | null>(mealState.error)
     const [loading, setLoading] = useState<boolean>(false);
     useEffect(() => {
-      const fetchMeals = async () => {
-        try {
-          setLoading(true);
-          for (let i = 0; i < 15; i++) {
-            await dispatch(getMeal());
-          }
-        } catch (error) {
-          const err = error as Error
-          setError(err.message)
-        } finally {
-          setLoading(false)
-        }
-  
-      };
-      fetchMeals();
-    }, [dispatch])
-    
-    return {mealState, error, loading}
+        const fetchMeals = async () => {
+            try {
+                setLoading(true);
+                for (let i = 0; i < 5; i++) {
+                    await dispatch(getMeal());
+                }
+            } catch (error) {
+                const err = error as Error
+                setError(err.message)
+            } finally {
+                setLoading(false)
+            }
+
+        };
+
+        fetchMeals();
+    }, [])
+
+    return { mealState, error, loading }
 }
 
 export default useGetMeals
