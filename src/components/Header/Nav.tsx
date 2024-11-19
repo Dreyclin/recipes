@@ -1,12 +1,15 @@
-import React from 'react'
-
-
 const Nav = () => {
+
   return (
     <nav className='desc_text'>
       <ul className='hidden gap-4 sm:flex'>
         <li className='nav-item text-lg chosen_link'><a href="/">Рецепти</a></li>
-        <li className='nav-item text-lg'><a href="/">Обрані</a></li>
+        <li className='nav-item text-lg flex justify-center gap-2'>
+          <a href="/">Обрані</a>
+          {/* {numOfChosenRecipes > 0 && <div className="number_chosen">
+            <p>{numOfChosenRecipes}</p>
+          </div>} */}
+        </li>
       </ul>
       <div className="w-10 sm:hidden">
         <img src="assets/images/burger.png" alt="" />
