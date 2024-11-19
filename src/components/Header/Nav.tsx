@@ -3,7 +3,7 @@ import React from 'react'
 
 const Nav = () => {
   return (
-    <nav className=''>
+    <nav className='desc_text'>
       <ul className='hidden gap-4 sm:flex'>
         <li className='nav-item text-lg chosen_link'><a href="/">Рецепти</a></li>
         <li className='nav-item text-lg'><a href="/">Обрані</a></li>

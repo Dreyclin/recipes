@@ -11,8 +11,36 @@ body {
     @apply text-4xl text-[#0c2e1d] 
 }
 
+.desc_text {
+    font-family: 'Roboto', sans-serif;
+}
+
 .chosen_link {
     @apply text-[#0c2e1d] font-bold pb-1 border-b-2 border-[#0c2e1d]
+}
+
+.item {
+    @apply flex flex-col w-64 h-auto gap-4
+}
+
+.recipe_image_container {
+    @apply w-64 h-64 bg-slate-500 rounded-lg overflow-hidden
+}
+
+.desc_container {
+    @apply flex flex-col gap-3
+}
+
+.recipe_image {
+    @apply w-full h-full object-fill rounded-lg
+}
+
+.recipe_btns_container {
+    @apply w-full flex gap-4 flex-wrap desc_text
+}
+
+.recipe_btn {
+    @apply bg-[#dddbdc] px-4 py-2 rounded-full transition hover:bg-[#a9a7a8]
 }
 
 .nav-item{
