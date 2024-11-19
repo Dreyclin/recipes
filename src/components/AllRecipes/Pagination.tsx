@@ -1,17 +1,53 @@
-import React from 'react'
+import React from 'react';
 
-const Pagination = () => {
-  return (
-    <div className='desc_text pagination_container'>
-      <button className='pagination_item'>&lt;</button>
-      <div className="hidden gap-4 sm:flex">
-        <button className='pagination_item pagination_item_active'>1</button>
-        <button className='pagination_item'>2</button>
-        <button className='pagination_item'>3</button>
-      </div>
-      <button className='pagination_item'>&gt;</button>
-    </div>
-  )
+interface PaginationProps {
+  currentPage: number;
+  totalPages: number;
+  paginate: (pageNumber: number) => void;
 }
+
+const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, paginate }) => {
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      paginate(currentPage + 1);
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      paginate(currentPage - 1);
+    }
+  };
+
+  return (
+    <div className="desc_text pagination_container">
+      <button 
+        className="pagination_item" 
+        onClick={handlePrevious} 
+        disabled={currentPage === 1}
+      >
+        &lt;
+      </button>
+      <div className="flex gap-4">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index + 1}
+            className={`pagination_item ${currentPage === index + 1 ? 'pagination_item_active' : ''}`}
+            onClick={() => paginate(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+      <button 
+        className="pagination_item" 
+        onClick={handleNext} 
+        disabled={currentPage === totalPages}
+      >
+        &gt;
+      </button>
+    </div>
+  );
+};
 
 export default Pagination

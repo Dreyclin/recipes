@@ -12,7 +12,7 @@ const useGetMeals = () => {
       const fetchMeals = async () => {
         try {
           setLoading(true);
-          for (let i = 0; i < 5; i++) {
+          for (let i = 0; i < 15; i++) {
             await dispatch(getMeal());
           }
         } catch (error) {
