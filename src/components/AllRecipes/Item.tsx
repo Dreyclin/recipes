@@ -8,7 +8,7 @@ const Item = () => {
       </div>
       <div className="desc_container">
         <h3 className='title_text'>Chicken breast</h3>
-        <p className='desc_text text-[#939393]'>Very tasty chicken breast</p>
+        <p className='desc_text text-[#939393] overflow-hidden text-ellipsis whitespace-nowrap'>Very tasty chicken</p>
       </div>
       <div className="recipe_btns_container">
         <button className='recipe_btn'>Обрати</button>

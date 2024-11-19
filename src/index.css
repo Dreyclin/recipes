@@ -43,6 +43,18 @@ body {
     @apply bg-[#dddbdc] px-4 py-2 rounded-full transition hover:bg-[#a9a7a8]
 }
 
+.pagination_container {
+    @apply w-full flex justify-between my-10 items-center
+}
+
+.pagination_item {
+    @apply text-xl px-6 py-2 border-2 border-[#0c2e1d] rounded-md
+}
+
+.pagination_item_active {
+    @apply border-4 bg-gray-200
+}
+
 .nav-item{
     position: relative;
     transition: 0.3s ease-in-out;
